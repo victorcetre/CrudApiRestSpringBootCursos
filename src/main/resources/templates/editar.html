@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURSOS - EDITAR</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+
+<body>
+  <header class="header ">
+    <div class="header__container container">
+      <h1 class="header__titile">CRUD Spring Boot MVC Web</h1>
+      <h2 class="header__name">Editar</h2>
+    </div>
+  </header>
+
+  <div class="container_form container">
+
+    <form class="formulario"  form th:action="@{/crud/guardar}" method="post" th:object="${curso}">
+
+      <label for="id">ID:</label>                        
+      <input type="number" name="id" th:field="*{id}"required>
+      
+      <label for="nombre">Nombre:</label>                        
+      <input type="text" name="nombre" th:field="*{nombre}"required>
+    
+      <label for="precio">Precio:</label>                        
+      <input type="number" name="precio" th:field="*{precio}">
+    
+      <label for="hora">Hora:</label>                        
+      <input type="number" name="hora" th:field="*{hora}">
+
+       <label for="nivel">Nivel:</label>                        
+       <input type="text" name="nivel" th:field="*{nivel}">
+
+       <label for="fechaInscripcionI">Fecha de Inscripcion Inicial:</label>
+       <input type="date" name="fechaInscripcionInicial" th:field="*{fechaInscripcionInicial}">
+     
+       <label for="fechaInscripcionC">Fecha de Inscripcion Final:</label>                        
+       <input type="date" name="fechaInscripcionFinal" th:field="*{fechaInscripcionFinal}">
+
+       <label for="fechaInicio">Fecha de Inicio:</label>                        
+       <input type="date" name="fechaInicio" th:field="*{fechaInicio}">
+
+       <label for="fechaCierre">Fecha de Cierre:</label>                        
+       <input type="date" name="fechaCierre" th:field="*{fechaCierre}">
+    
+      <label for="fechaCierre">Fecha de Cierre:</label>                        
+      <input type="date" name="fechaCierre" th:field="*{fechaCierre}">
+    
+      <label for="numAlumnos">Número de Alumnos:</label>                        
+      <input type="text" name="numAlumnos" th:field="*{numAlumnos}">
+    
+      <label for="descripcion">Descripción:</label>                        
+      <input type="text" name="descripcion" th:field="*{descripcion}">
+    
+      <label for="modalidad">Modalidad:</label>                        
+      <input type="text" name="modalidad" th:field="*{modalidad}">
+    
+      <input  id="buttom" type="submit" name="guardar" value="GUARDAR">
+      </form>
+
+  </div>
+    
+</body>
+</html>

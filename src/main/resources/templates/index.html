@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - CURSOS</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+<body>
+  <div class="container">
+
+    <header class="header">
+        <div class="header__container header__container--index">
+            <h1 class="header__titulo">Crud Spring Boot Mvc Web</h1>
+            <h2 class="header__nombre">Victor Cetre</h2>
+        </div>
+        
+    </header>
+    <hr>
+    <main class="main">
+        <div class="titulo_menu">
+            <h2>Menu Cursos</h2>
+        </div>
+        <div class="nav_home">
+            <a class="buttom" th:href="@{/crud/mlistar}">Listar Todo</a>
+            <a class="buttom" th:href="@{/crud/magregar}">Agregar</a>
+            <a class="buttom" th:href="@{/crud/buscarxid}">Buscar</a>
+        </div>
+    </main>
+
+  </div>
+    
+    <!-- <footer>
+        <ul class=”socials”>
+            <li><a href=”#”><i class="fa-brands fa-github"></i></a></li>
+            <li><a href=”#”><i class="fa-brands fa-linkedin"></i></i></a></li>
+         </ul>
+         <div class=”footer-bottom”>
+            <p>&copy; Victor Cetre - 2023</p>
+         </div>
+    </footer> -->
+</body>
+</html>

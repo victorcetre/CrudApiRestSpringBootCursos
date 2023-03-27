@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURSOS - BUSCAR</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"
+</head>
+<body>
+    <header class="header">
+        <div class="header__container container">
+            <h1>CRUD Spring Boot MVC Web</h1>
+            <h2>BUSCAR</h2>
+        </div>
+    </header>
+
+    <div class="container_form container">
+            <h2 class="">BUSCAR CURSOS</h2>
+            
+            <form class="formulario" th:action="@{/crud/xid}" method="post" th:object="${curso}">
+
+             <legend>Datos del Curso</legend>
+            
+              <label for="id">ID:</label>                        
+              <input type="number" name="id" th:value="${cursos == null? '' : curso.hora}"required>
+              
+              <label for="nombre">Nombre:</label>                        
+              <input type="text" th:name="nombre" th:id="nombre" th:text="${cursos == null? '' : curso.hora}">
+      
+              <label for="precio">Precio:</label>                        
+              <input type="number" th:name="precio" th:id="precio" th:value="${cursos == null? '' : curso.hora}">
+
+              <label for="hora">Hora:</label>                        
+              <input type="number" name="hora"  th:value="${cursos == null? '' : curso.hora}">
+            
+              <label for="nivel">Nivel:</label>                        
+              <input type="text" name="nivel"  th:value="${ncursos == null? '' : curso.ivel}">
+  
+              <label for="fechaInscripcionI">Fecha de Inscripcion Inicial:</label>                        
+              <input type="date" name="fechaInscripcionInicial"  th:value="${cursos == null? '' : curso.fechaInscripcionInicial}">
+
+              <label for="fechaInscripcionC">Fecha de Inscripcion Final:</label>                        
+              <input type="date" name="fechaInscripcionFinal"  th:value="${cursos == null? '' : curso.fechaInscripcionFinal}">
+
+              <label for="fechaInicio">Fecha de Inicio:</label>                        
+              <input type="date" name="fechaInicio"  th:value="${cursos == null? '' : curso.fechaInicio}">
+
+              <label for="fechaCierre">Fecha de Cierre:</label>                        
+              <input type="date" name="fechaCierre"  th:value="${cursos == null? '' : curso.fechaCierre}">
+              
+              <label for="numAlumnos">Número de Alumnos:</label>                        
+              <input type="text" name="numAlumnos"  th:value="${cursos == null? '' : curso.numAlumnos}">
+                    
+              <label for="descripcion">Descripción:</label>                        
+              <input type="text" name="descripcion"  th:value="${cursos == null? '' : curso.descripcion}">
+              
+              <label for="modalidad">Modalidad:</label>                        
+              <input type="text" name="modalidad"  th:value="${cursos == null? '' : curso.modalidad}">
+              
+              <label for="modalidad">Modalidad:</label>                        
+              <input type="text" name="modalidad"  th:value="${cursos == null? '' : curso.modalidad}">                  
+            
+             <a  th:href="@{/}"><input id="buttom" type="button" value="INICIO"></a>
+             <br>
+             <input id="buttom" type="submit" name="buscar" value="BUSCAR" class="btn-buscar">
+              <p style="color: red;" th:text="${mensaje}"></p>
+            </form>
+        </div>
+
+    <footer></footer>
+</body>
+</html>

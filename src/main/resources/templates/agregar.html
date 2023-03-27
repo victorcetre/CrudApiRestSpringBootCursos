@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURSOS - AGREGAR</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+<body>
+
+    <header>
+        <div class="header__container container">
+            <h1>CRUD Spring Boot MVC Web</h1>
+            <h2>AGREGAR</h2>
+        </div>
+    </header>
+    <div class="container_form container">
+      <h2>Datos del Curso</h2>
+      <form class="formulario" th:action="@{/crud}" method="post" th:object="${curso}">
+        <legend>Agregar</legend>
+                    
+         <label for="id">ID</label>
+         <input type="number" name="id" required placeholder="Ingresa el Codigo">
+
+         <label for="nombre">NOMBRE</label>
+         <input type="text" name="nombre" required placeholder="Ingresa el Nombre">
+
+         <label for="precio">PRECIO</label>
+         <input type="number" name="precio" placeholder="Ingresa el Precio">   
+
+         <label for="hora">HORA</label>
+         <input type="number" name="hora" placeholder="Ingresa la Hora">
+         
+         <label for="nivel">NIVEL</label>
+         <input type="text" name="nivel" placeholder="Ingresa el Nivel">
+         
+         <label for="fechaInscripcionI">FECHA INSCRIPCION INICIAL</label>
+         <input type="date" name="fechaInscripcionInicial" placeholder="Ingresar la Fecha de Inscripcion Inicial" required>
+
+         <label for="fechaInscripcionC">FECHA INSCRIPCION FINAL</label>
+         <input type="date" name="fechaInscripcionFinal" placeholder="Ingresar la Fecha de Inscripcion Final" required>
+
+         <label for="fechaInicio">FECHA DE INICIO</label>
+         <input type="date" name="fechaInicio" placeholder="Ingresar la Fecha de Inicio" required>
+        
+         <label for="fechaCierre">FECHA DE CIERRE</label>
+         <input type="date" name="fechaCierre" placeholder="Ingresar la Fecha de Cierre" required>
+
+         <label for="numAlumnos">NUMERO DE ALUMNOS:</label>
+         <input type="text" name="numAlumnos" placeholder="Ingresar Número de Alumnos">
+
+         <label for="descripcion">DESCRIPCION:</label>
+         <input type="text" name="descripcion" placeholder="Ingresar Descripción">
+
+         <label for="modalidad">MODALIDAD:</label>
+         <input type="text" name="modalidad" placeholder="Ingresar Modalidad">
+
+         <div class="btn">
+          <a   th:href="@{/}"><input  type="button" value="INICIO"></a>
+         </div>
+
+         <input id="buttom" type="submit" name="guardar" value="AGREGAR" class="btn-agregar">
+
+                <p style="color: red;" th:text="${mensaje}"></p>
+        </form>
+        </div>
+            
+    <footer></footer>
+
+    </div>
+</body>
+</html>

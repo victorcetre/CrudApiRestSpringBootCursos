@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - CURSOS</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+    <body>
+      
+    <header class="header">
+        <div class="header__container container">
+            <h1>Crud Spring Boot Mvc Web</h1>
+            
+            <h2 class="subtitulo">REPORTE DE CURSOS</h2>
+        </div>
+    </header>
+
+   <div class="container__listar">
+
+    <main >
+        <div class="form-listar">
+            <form action="">
+                <fieldset class="fieldset">
+                    <legend>Lista de Cursos</legend>
+                    <div th:if="${cursos != null AND !cursos.empty}">
+                        <table class="table-fill">
+                            <tr>                            
+                                <th class="table-left">ID</th>
+                                <th class="table-left">NOMBRE</th>
+                                <th class="table-left">PRECIO</th>
+                                <th class="table-left">HORA</th>
+                                <th class="table-left">NIVEL</th>
+                                <th class="table-left">FECHA INSCRIPCION INICIAL</th>
+                                <th class="table-left">FECHA INSCRIPCION FINAL</th>
+                                <th class="table-left">FECHA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE&nbsp;&nbsp;&nbsp;&nbsp; INICIO</th>
+                                <th class="table-left">FECHA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE&nbsp;&nbsp;&nbsp;&nbsp; CIERRE</th>
+                                <th class="table-left">NUMERO DE ALUMNOS</th>
+                                <th class="table-left">DESCRIPCION</th>
+                                <th class="table-left">MODALIDAD</th>                                
+                                <th class="table-left">EDITAR</th>
+                                <th class="table-left">ELIMINAR</th>
+                            </tr>
+                            <tr th:each="curso : ${cursos}">
+                                <td th:text="${curso.id}"></td>
+                                <td th:text="${curso.nombre}"></td>
+                                <td th:text="${curso.precio}"></td>
+                                <td class="center" th:text="${curso.hora}"></td>
+                                <td th:text="${curso.nivel}"></td>
+                                <td class="center" th:text="${curso.fechaInscripcionInicial}"></td>
+                                <td class="center" th:text="${curso.fechaInscripcionFinal}"></td>
+                                <td class="center" th:text="${curso.fechaInicio}"></td>
+                                <td class="center" th:text="${curso.fechaCierre}"></td>
+                                <td class="center" th:text="${curso.numAlumnos}"></td>
+                                <td th:text="${curso.descripcion}"></td>
+                                <td th:text="${curso.modalidad}"></td>
+                                <td class="editar"><a  th:href="@{/crud/editar/}+${curso.id}" text=""><img  th:src="@{/assets/editar.svg}" alt=""></a></td>
+                                <td class="eliminar"><a th:href="@{/crud/eliminar/}+${curso.id}" text=""><img  th:src="@{/assets/eliminar.svg}" alt=""></a></td>
+                            </tr>                     
+                        </table>
+                    </div>
+                    <div class="alerta" th:if="${cursos == null or cursos.empty}">
+                        <span>No hay Cursos para mostrar</span>
+                    </div>
+                    <div class="btn btn--listar">
+                        <a  th:href="@{/}"><input type="button" value="INICIO"></a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+    </div>
+</body>
+</html>
